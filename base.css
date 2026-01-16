@@ -1,38 +1,196 @@
 html, body {
+    height: 100%;
     margin: 0;
 }
+
 body {
-    background-color: #f1f1f1;
+    background-color: #F4F6F8;
     display: flex;
     justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
 }
 
 .wrapper {
     width: 1200px;
+    min-height: 100vh; /* ocupa 100% da altura da tela */
     display: flex;
     margin: 0 auto;
-    background-color: aquamarine;
 }
-.main {
-    display: flex;
-    flex-flow: column;
-    width: 85%;
-}
+
 .menu {
     width: 15%;
-    background-color: aqua;
-    padding: 10px 20px 0px;
+    background-color: #0F4C5C;
+    padding: 25px;
+    display: flex;
+    min-height: 100vh;
 }
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-bottom: 15px;
+}
+
+.menu ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu ul li a:hover {
+    color: #CDECEE;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    min-height: 100vh;
+}
+
 .header {
-    background-color: rgb(5, 108, 108);
+    background-color: #1B9AAA;
     min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.header h1 {
+    color: #FFFFFF;
+    margin: 0;
+}
+
 .content {
+    flex: 1;
     background-color: white;
-    min-height: 300px;
     padding: 20px;
 }
+
+/* Layout para página de contato: informações à esquerda, mapa à direita */
+.contact-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1 1 auto;
+}
+
+.contact-map {
+    width: 360px; /* largura fixa para o mapa no lado direito */
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+}
+
+.content-bg {
+    min-height: 400px;
+
+    background-image: url("clinica-médica-1024x535.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.content-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content-bg h2,
+.content-bg p {
+    position: relative;
+    z-index: 1;
+}
+
+
 .footer {
-    background-color: rgb(99, 56, 240);
-    min-height: 150px;
+    background-color: #0F4C5C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 30px;
+    margin-top: 0px;
+    border: radius 0;;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+button {
+    background-color: #1B9AAA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+form {
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #056c6c;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #ccc;
 }
